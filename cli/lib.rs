@@ -64,7 +64,7 @@ use crate::worker::MainWorker;
 use deno_core::v8_set_flags;
 use deno_core::ErrBox;
 use deno_core::ModuleSpecifier;
-use flags::DenoFlags;
+pub use flags::DenoFlags;
 use flags::DenoSubcommand;
 use log::Level;
 use log::Metadata;
@@ -407,7 +407,7 @@ fn run_script(flags: DenoFlags) {
   }
 }
 
-pub fn main() {
+pub fn main(flags: DenoFlags) {
   #[cfg(windows)]
   ansi_term::enable_ansi_support().ok(); // For Windows 10
 
